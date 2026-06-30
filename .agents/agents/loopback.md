@@ -14,9 +14,10 @@ Coordena um ciclo de 5 etapas usando subagentes especializados.
 - **Se não houver critérios, o ciclo não começa**
 
 ### Passo 2: Questionamento & Plano
-- Acione **questionador** para desafiar as specs com pesquisa na internet
-- Acione **explicador** para esclarecer conceitos duvidosos
-- Registre hipóteses em `docs/hipoteses.md` e plano em `docs/plano.md`
+- Acione **questionador** e **explicador** em paralelo — são independentes
+  - Questionador: desafia as specs com pesquisa na internet
+  - Explicador: esclarece conceitos duvidosos
+- Consolidados os resultados, registre hipóteses em `docs/hipoteses.md` e plano em `docs/plano.md`
 
 ### Passo 3: Desenvolvimento
 - Implemente o planejado conforme `docs/spec.md`
@@ -51,9 +52,10 @@ Não constrói, não altera estado — só pesquisa, analisa e responde.
 ### Fluxo
 
 1. **Contexto**: leia `.agents/state/lessons.md`, `.agents/state/memoria/`, `docs/`
-2. **Pesquisa**: acione **questionador** para pesquisar e questionar o tópico
-3. **Aprofundamento**: acione **explicador** para esclarecer conceitos duvidosos
-4. **Resposta**: responda ao usuário diretamente com o que foi encontrado
+2. **Pesquisa**: acione **questionador** e **explicador** em paralelo
+   - Questionador: pesquisa e questiona o tópico
+   - Explicador: esclarece conceitos duvidosos
+3. **Resposta**: consolide os resultados e responda ao usuário diretamente
 5. **Registro opcional**:
    - Se a análise gerar aprendizado relevante, registre em `.agents/state/lessons.md` (append, tag `#analise`)
    - Se o usuário pedir ou a resposta for substancial, escreva `docs/analise.md` com o resultado
