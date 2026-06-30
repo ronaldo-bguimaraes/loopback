@@ -35,7 +35,7 @@ AGENTS.md                   ← Entry point universal (raiz)
 
 | Agente | Role | Descrição |
 |---|---|---|
-| loopback | orchestrator | Ciclo de 7 etapas: especificar → definir → questionar → documentar → desenvolver → validar → melhorar → loop + auditoria |
+| loopback | orchestrator | Ciclo de 5 etapas: spec & definição → questionamento & plano → desenvolvimento → validação & melhoria → auditoria & loop |
 | questionador | critic | Questiona com pesquisa na internet |
 | explicador | researcher | Explica conceitos com pesquisa na internet |
 | validador | checker | Executa testes e verifica critérios |

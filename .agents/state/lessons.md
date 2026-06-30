@@ -18,3 +18,9 @@
 - Spec first: todo ciclo deve começar com `docs/spec.md` (escrito pelo especulador)
 - Audit mandatory: todo ciclo deve terminar com validação do especulador
 - Especulador read-only previne auto-sabotagem (maker-checker split)
+
+## Ciclo 4
+- Ciclo enxuto de 5 passos é suficiente: spec → questionar → desenvolver → validar+melhorar → auditar
+- Documentação como side-effect (contínua) funciona melhor que passo dedicado
+- goal.md é redundante com spec.md — spec.md como fonte única simplifica
+- Lessons.md deve ser consultado durante validação, não só no início

@@ -1,9 +1,9 @@
 ---
 # GENERATED — Edit .agents/agents/loopback.md instead
 description: >
-  Orquestrador de desenvolvimento autoincremental. Use quando precisar
-  desenvolver algo iterativamente: definir, questionar, documentar,
-  implementar, validar e melhorar em ciclos contínuos.
+  Orquestrador de desenvolvimento autoincremental. Ciclo de 5 etapas:
+  spec & definição, questionamento & plano, desenvolvimento,
+  validação & melhoria, auditoria & loop.
 mode: primary
 temperature: 0.7
 permission:

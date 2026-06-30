@@ -1,25 +1,18 @@
-# Spec — Ciclo 3 — Resultado
+# Spec — Ciclo 4 — Simplificação do Ciclo
 
 ## Critérios
-- [x] **Agente especulador criado**: arquivo `.agents/agents/especulador.md` existe com modos preflight e audit
-  - Evidência: `.agents/agents/especulador.md`
+- [x] **Ciclo reduzido a 5 passos contínuos**: loopback.md define exatas 5 etapas
+  - Evidência: 5 ocorrências de "### Passo" no arquivo
   - Status: ✅
-- [x] **Integrado no ciclo**: loopback referencia especulador nos passos 0 e 7
-  - Evidência: `.agents/agents/loopback.md` contém "especulador"
+- [x] **`docs/goal.md` eliminado**: spec.md é única fonte da verdade
+  - Evidência: goal.md contém redirecionamento para spec.md
   - Status: ✅
-- [x] **Adaptador OpenCode**: `.opencode/agents/especulador.md` e `opencode.json` registrados
-  - Evidência: ambos os arquivos existem
+- [x] **Lessons.md consultado na validação**: referenciado no passo de validação
+  - Evidência: `grep "lessons.md" .agents/agents/loopback.md` mostra múltiplas referências, inclusive no passo 4
   - Status: ✅
-- [x] **Zero frontmatter proprietário**: `.agents/agents/especulador.md` sem mode/permission/color
-  - Evidência: `grep -c "mode:"` = 0
+- [x] **Nenhum passo exclusivo de documentação**: docs é contínuo, não etapa separada
+  - Evidência: única menção é "Documentação é contínua" (preamble)
   - Status: ✅
-- [x] **No-downgrade**: especulador é read-only (edit: deny)
-  - Evidência: `.opencode/agents/especulador.md` contém "deny"
+- [x] **No-regression**: todos os elementos críticos preservados
+  - Evidência: Preflight ✅ Audit ✅ Spec first ✅ Audit mandatory ✅ Validador ✅
   - Status: ✅
-
-## Restrições
-- Especulador read-only (edit: deny) ✅
-- Tool-agnostic na fonte canônica ✅
-
-## Resultado
-- [x] **Todos os critérios atendidos**

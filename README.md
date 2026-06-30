@@ -30,19 +30,19 @@ docs/                 ← Documentação do ciclo
 ## Ciclo
 
 ```
-0. Especificação  → especulador define critérios em docs/spec.md
-1. Definição      → propósito essencial
-2. Questionamento → hipóteses, pesquisa, contra-pontos
-3. Documentação   → atualiza docs com aprendizado
-4. Desenvolvimento → implementação
-5. Validação      → testes, lint, typecheck contra a spec
-6. Melhoria       → refatoração com pesquisa de melhores práticas
-7. Loop + Auditoria → especulador valida, só completa se tudo ✅
+1. Spec & Definição     → especulador define critérios, propósito
+2. Questionamento & Plano → pesquisa, hipóteses, plano
+3. Desenvolvimento       → implementação alinhada à spec
+4. Validação & Melhoria  → testes contra spec + refatoração
+5. Auditoria & Loop      → especulador audita, itera ou para
 ```
 
-## Regra
+## Regras
 
-**No-downgrade.** Toda iteração deve melhorar o projeto em ao menos um aspecto.
+- **No-downgrade:** toda iteração deve melhorar o projeto em ao menos um aspecto
+- **Spec first:** nenhum ciclo começa sem critérios verificáveis
+- **Audit mandatory:** nenhum ciclo termina sem validação
+- **Maker-checker split:** quem especifica ≠ quem implementa ≠ quem valida
 
 ## Como usar
 

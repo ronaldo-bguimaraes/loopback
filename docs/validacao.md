@@ -1,18 +1,9 @@
-# Validação — Ciclo 3
+# Validação — Ciclo 4
 
-## Agentes
-- ✅ `.agents/agents/especulador.md` — criado com modo preflight + audit
-- ✅ `.opencode/agents/especulador.md` — adaptador OpenCode
-- ✅ `opencode.json` — especulador registrado como subagent
+## Critérios (de `docs/spec.md`)
 
-## Ciclo Loopback
-- ✅ `.agents/agents/loopback.md` — passo 0 (especificação) + passo 7 (auditoria)
-- ✅ Especulador nas dependências (`depends_on`)
-- ✅ Spec first: ciclo não começa sem `docs/spec.md`
-- ✅ Audit mandatory: ciclo não termina sem validação
-
-## Consistência
-- ✅ Especulador referenciado em `.agents/AGENTS.md`
-- ✅ Especulador referenciado em `.opencode/agents/loopback.md` (task)
-- ✅ 5 agentes no total: loopback, questionador, explicador, validador, especulador
-- ✅ Zero frontmatter proprietário na fonte canônica
+- [x] **Ciclo reduzido a 5 passos**: loopback.md tem exatas 5 seções "### Passo"
+- [x] **goal.md eliminado**: arquivo redireciona para spec.md
+- [x] **Lessons.md na validação**: referenciado nos passos 1, 4 (validação) e 5, além das regras
+- [x] **Nenhum passo exclusivo de docs**: única menção é "Documentação é contínua" (preamble)
+- [x] **No-regression**: Preflight, Audit, Spec first, Audit mandatory, Validador — todos preservados
