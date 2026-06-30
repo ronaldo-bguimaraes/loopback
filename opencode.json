@@ -1,0 +1,30 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "loopback",
+  "agent": {
+    "loopback": {
+      "description": "Orquestrador de desenvolvimento autoincremental.",
+      "mode": "primary"
+    },
+    "questionador": {
+      "description": "Questiona e desafia com pesquisa na internet.",
+      "mode": "subagent"
+    },
+    "explicador": {
+      "description": "Pesquisa e explica conceitos técnicos.",
+      "mode": "subagent"
+    },
+    "validador": {
+      "description": "Executa testes, lints e typechecks.",
+      "mode": "subagent",
+      "temperature": 0.1,
+      "color": "#ef4444"
+    },
+    "especulador": {
+      "description": "Define specs do ciclo e valida se foram cumpridas.",
+      "mode": "subagent",
+      "temperature": 0.2,
+      "color": "#a855f7"
+    }
+  }
+}

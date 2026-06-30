@@ -1,0 +1,68 @@
+# Loopback — Sistema Autoincremental Tool-Agnostic
+
+Este projeto implementa um ciclo de desenvolvimento autoincremental para
+agentes de IA, sem dependência de ferramenta específica.
+
+## Estrutura
+
+```
+.agents/                    ← Fonte canônica (tool-agnostic)
+  AGENTS.md                 ← Este arquivo — instruções do projeto
+  agents/                   ← Definições de agente (markdown puro)
+    loopback.md             ← Orquestrador do ciclo
+    questionador.md         ← Crítico com pesquisa na internet
+    explicador.md           ← Pesquisador e explicador técnico
+    validador.md            ← Verificador independente
+  policies/                 ← Políticas de segurança (imutáveis entre ciclos)
+    security.yaml           ← Regras de segurança e no-downgrade
+  state/                    ← Estado persistente entre ciclos
+    iteracao.yaml           ← Contador de iterações
+    lessons.md              ← Aprendizados acumulados
+  skills/                   ← Skills portáveis
+docs/                       ← Documentação do ciclo
+  definicao.md
+  hipoteses.md
+  plano.md
+  validacao.md
+  melhoria.md
+  goal.md
+  aprendizados.md
+  iteracao.md               ← Contador legado (manter compatibilidade)
+AGENTS.md                   ← Entry point universal (raiz)
+```
+
+## Agentes
+
+| Agente | Role | Descrição |
+|---|---|---|
+| loopback | orchestrator | Ciclo de 7 etapas: especificar → definir → questionar → documentar → desenvolver → validar → melhorar → loop + auditoria |
+| questionador | critic | Questiona com pesquisa na internet |
+| explicador | researcher | Explica conceitos com pesquisa na internet |
+| validador | checker | Executa testes e verifica critérios |
+| especulador | specifier | Define specs antes do ciclo e valida após |
+
+## Convenções
+
+- Definições de agente em `.agents/agents/*.md` — markdown puro, sem frontmatter proprietário
+- Memória entre ciclos em `.agents/state/`
+- Documentação de ciclo em `docs/`
+- Adaptadores tool-specific são gerados (`.opencode/`, `opencode.json`, etc.)
+
+## Regra Fundamental
+
+**Nunca downgrade.** Toda iteração deve melhorar o projeto em pelo menos um
+aspecto (segurança, performance, clareza, cobertura de testes, documentação).
+Nenhuma iteração pode reduzir segurança ou remover funcionalidade.
+
+## Comandos
+
+- Test: `npm test` / `pytest` / `cargo test`
+- Lint: `npm run lint` / `ruff` / `golangci-lint`
+- Typecheck: `npm run typecheck` / `mypy` / `cargo check`
+
+## Gotchas (aprendidos)
+
+- Não usar permissões irrestritas — preferir allowlists granulares
+- Sempre criar agente validador separado (maker-checker split)
+- Toda referência a arquivo deve existir antes de ser mencionada
+- Sempre definir entry point universal (AGENTS.md na raiz)
