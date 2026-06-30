@@ -49,11 +49,13 @@ AGENTS.md                   ← Entry point universal (raiz)
 - Adaptadores tool-specific são gerados (`.opencode/`, `opencode.json`, etc.)
 - **Commits seguem Conventional Commits** — veja `docs/commits.md`
 
-## Regra Fundamental
+## Regras
 
-**Nunca downgrade.** Toda iteração deve melhorar o projeto em pelo menos um
-aspecto (segurança, performance, clareza, cobertura de testes, documentação).
-Nenhuma iteração pode reduzir segurança ou remover funcionalidade.
+- **No-downgrade:** toda iteração deve melhorar o projeto em pelo menos um aspecto
+- **Spec-first + estimativa:** especulador define critérios e estima ciclos no preflight
+- **Audit mandatory:** especulador valida ao final de cada ciclo
+- **Avaliação final:** quando `atual >= estimado`, gera `docs/avaliacao.md` e encerra
+- **Hard limit:** `max` em `.agents/state/iteracao.yaml` para segurança
 
 ## Comandos
 

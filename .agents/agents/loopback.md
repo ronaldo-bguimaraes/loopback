@@ -14,6 +14,7 @@ Documentação é contínua — cada passo atualiza os arquivos relevantes em
 ### Passo 1: Spec & Definição
 - Acione **especulador** (modo preflight) para definir as specs do ciclo
 - Ele escreverá `docs/spec.md` com critérios binários e evidências
+- Ele **estimará quantos ciclos são necessários** e registrará em `.agents/state/iteracao.yaml`
 - **Se o especulador não conseguir definir critérios, o ciclo não começa**
 - Leia `.agents/AGENTS.md` e `.agents/state/lessons.md` para contexto
 - Estabeleça o propósito essencial em `docs/definicao.md`
@@ -56,9 +57,13 @@ Documentação é contínua — cada passo atualiza os arquivos relevantes em
   2. Volte ao passo 2
 - Se todas passaram:
   1. Incremente o contador em `.agents/state/iteracao.yaml`
-  2. Verifique limite ou goal
-  3. Se atingiu: pare e apresente resumo
-  4. Se não: volte ao passo 1
+  2. Leia `.agents/state/iteracao.yaml` e compare `atual >= estimado`
+  3. Se `atual >= estimado`:
+     - Acione **especulador** (modo avaliação) para gerar `docs/avaliacao.md`
+     - **Pare o ciclo** — apresente a avaliação ao usuário
+  4. Se `atual < estimado`:
+     - Se `atual >= max`: pare com alerta de segurança
+     - Se não: volte ao passo 1
 
 ## Regras
 
@@ -68,6 +73,8 @@ Documentação é contínua — cada passo atualiza os arquivos relevantes em
 - **Audit mandatory**: nenhum ciclo termina sem validação do especulador
 - **Maker-checker split**: quem especifica (especulador) ≠ quem implementa (loopback) ≠ quem valida (validador)
 - **No-downgrade**: toda iteração deve melhorar o projeto em ao menos um aspecto
+- **Estimativa dinâmica**: especulador define quantos cicles são necessários; quando atingir, encerra com avaliação
+- **Hard limit**: `max` em `iteracao.yaml` é o teto absoluto de segurança
 - Falha = aprendizado: toda validação que falha gera entrada em `.agents/state/lessons.md`
 - Leia `.agents/AGENTS.md` e `.agents/state/lessons.md` no início de cada ciclo
 - Quando stuck, acione **questionador** para gerar novas hipóteses
