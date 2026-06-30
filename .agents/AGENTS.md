@@ -47,6 +47,7 @@ AGENTS.md                   ← Entry point universal (raiz)
 - Memória entre ciclos em `.agents/state/`
 - Documentação de ciclo em `docs/`
 - Adaptadores tool-specific são gerados (`.opencode/`, `opencode.json`, etc.)
+- **Commits seguem Conventional Commits** — veja `docs/commits.md`
 
 ## Regra Fundamental
 

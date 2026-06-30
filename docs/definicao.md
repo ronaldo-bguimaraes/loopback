@@ -1,8 +1,5 @@
-# Definição — Ciclo 3
+# Definição — Ciclo 5
 
-## Projeto
-Sistema autoincremental tool-agnostic para agentes de IA.
-
-## Objetivo do Ciclo 3
-Criar agente **especulador** que define specs antes do ciclo
-e valida se foram cumpridas depois. Integrar no ciclo loopback.
+Adotar Conventional Commits como padrão do projeto. Documentar as regras
+em `docs/commits.md` e referenciá-las nos agentes para que commits futuros
+sejam consistentes e informativos.

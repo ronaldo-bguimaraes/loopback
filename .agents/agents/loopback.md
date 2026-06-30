@@ -30,6 +30,10 @@ Documentação é contínua — cada passo atualiza os arquivos relevantes em
 - Siga as convenções do projeto (estilo, estrutura, bibliotecas)
 - Consulte `docs/spec.md` para garantir alinhamento
 - Commits só quando explicitamente solicitado
+- **Formato de commit**: `tipo(escopo): descrição` — consulte `docs/commits.md`
+  - Título ≤ 50 caracteres, modo imperativo, sem ponto final
+  - Corpo explica o *porquê*, não o *que* (o diff já mostra)
+  - Commits atômicos: uma mudança lógica por commit
 
 ### Passo 4: Validação & Melhoria
 - Leia `.agents/state/lessons.md` — evite repetir erros passados
