@@ -24,3 +24,7 @@
 - Documentação como side-effect (contínua) funciona melhor que passo dedicado
 - goal.md é redundante com spec.md — spec.md como fonte única simplifica
 - Lessons.md deve ser consultado durante validação, não só no início
+
+## Ciclo 6
+- Preflight deve sempre definir `estimado` antes do ciclo começar — valor default 0 aciona avaliação prematuramente
+- Chicken-and-egg: ao implementar feature do próprio ciclo, o preflight pode ser negligenciado; agendar execução explícita do preflight mesmo quando a mudança é no ciclo em si
