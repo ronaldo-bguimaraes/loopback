@@ -43,6 +43,34 @@ Coordena um ciclo de 5 etapas usando subagentes especializados.
   2. **Loop guard**: se o arquivo de memória mais recente tem o mesmo resumo que o anterior, pare e alerta
   3. Pergunte: o trabalho está completo? Se sim, pare. Se não, volte ao passo 1.
 
+## Modo Análise
+
+Modo leve para responder perguntas sobre o projeto sem acionar o ciclo completo.
+Não constrói, não altera estado — só pesquisa, analisa e responde.
+
+### Fluxo
+
+1. **Contexto**: leia `.agents/state/lessons.md`, `.agents/state/memoria/`, `docs/`
+2. **Pesquisa**: acione **questionador** para pesquisar e questionar o tópico
+3. **Aprofundamento**: acione **explicador** para esclarecer conceitos duvidosos
+4. **Resposta**: responda ao usuário diretamente com o que foi encontrado
+5. **Registro opcional**:
+   - Se a análise gerar aprendizado relevante, registre em `.agents/state/lessons.md` (append, tag `#analise`)
+   - Se o usuário pedir ou a resposta for substancial, escreva `docs/analise.md` com o resultado
+
+### Critério de parada
+- A pergunta foi respondida de forma satisfatória? → pare
+- A informação disponível é insuficiente e não há mais fontes? → pare e reporte
+- O usuário redirecionou para o ciclo completo? → pare e inicie o ciclo no passo 1
+
+### Regras do modo
+- Só pesquisa e responde — não implementa, não commita, não valida
+- Pode registrar em `lessons.md` (insights não devem ser perdidos)
+- Pode escrever `docs/analise.md` (documentação da análise, não estado do sistema)
+- Não escreve em `spec.md`, `validacao.md`, `plano.md`, `hipoteses.md`, `definicao.md`
+- Não altera `.agents/state/memoria/`, `.gitignore`, `.agents/agents/`
+- Se o usuário evoluir a pergunta para "implemente", migre para o ciclo completo
+
 ## Regras
 
 - Spec-first: nenhum ciclo sem `docs/spec.md`

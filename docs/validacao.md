@@ -1,14 +1,14 @@
-# Validação — Simplificação do Estado
+# Validação — Modo Analítico
 
 ## Critérios
 
-- [x] `ciclo-{1..7}/` removidos, `memoria/` criado com resumo histórico
-- [x] `.agents/state/memoria/` no `.gitignore` (state/ memória é transitório)
-- [x] `especulador.md`: 2 modos (spec + valida), sem estimativa, sem snapshot
-- [x] `loopback.md`: passo 5 = arquivar + loop guard, sem contadores
-- [x] Docs obsoletos removidos: avaliacao.md, iteracao.md, goal.md, aprendizados.md
-- [x] `.agents/AGENTS.md` atualizado: `memoria/`, sem `ciclo-`, sem `estimado`
-- [x] `lessons.md` preservado (2167 bytes) — versionado
-- [x] Invariantes mantidas: spec.md existe, audit mandatory, maker-checker split
+- [x] Modo Análise documentado em loopback.md
+- [x] Questionador + Explicador no fluxo
+- [x] Proibição explícita de escrita em spec.md, validacao.md, plano.md, memoria/
+- [x] Pode registrar insights em lessons.md (append, tag #analise)
+- [x] Pode escrever docs/analise.md (documentação, não estado)
+- [x] Critério de parada: pergunta respondida / info insuficiente / redirecionamento
+- [x] Ciclo principal intacto (5 passos)
+- [x] Ponte para ciclo completo documentada
 
 ## Resultado: ✅ Todos os critérios atendidos
