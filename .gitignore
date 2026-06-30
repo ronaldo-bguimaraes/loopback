@@ -10,3 +10,6 @@ Thumbs.db
 # Dependencies
 node_modules/
 vendor/
+
+# State transitório (memória de sessão, deletável)
+.agents/state/memoria/

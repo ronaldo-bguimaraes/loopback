@@ -1,5 +1,11 @@
-# Plano — Ciclo 5
+# Plano — Simplificação do Estado
 
-1. Criar `docs/commits.md` com as convenções
-2. Atualizar `.agents/AGENTS.md` com referência ao padrão
-3. Atualizar `.agents/agents/loopback.md` para instruir agentes sobre commits
+## Ordem de implementação
+
+1. **Criar `memoria/`** — resumo do histórico em `.md` narrativo
+2. **Remover `ciclo-{1..7}/`** — após copiar resumo
+3. **`.gitignore`** — adicionar `.agents/state/memoria/` (e só memoria, não state inteiro)
+4. **Reescrever `especulador.md`** — 2 modos, sem estimativa/snapshot/avaliação
+5. **Reescrever `loopback.md`** — passo 5 = arquivar + loop guard
+6. **Limpar `docs/`** — remover `avaliacao.md`, `iteracao.md`
+7. **Atualizar `.agents/AGENTS.md`** — estrutura reflete `memoria/`

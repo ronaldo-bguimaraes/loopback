@@ -28,3 +28,17 @@
 ## Ciclo 6
 - Preflight deve sempre definir `estimado` antes do ciclo começar — valor default 0 aciona avaliação prematuramente
 - Chicken-and-egg: ao implementar feature do próprio ciclo, o preflight pode ser negligenciado; agendar execução explícita do preflight mesmo quando a mudança é no ciclo em si
+
+## Ciclo 7
+- State mutável compartilhado (`iteracao.yaml`, `goal.yaml`) reintroduz race conditions mesmo com ciclo-N/ imutável
+- `goal.yaml` separado é redundante — `estimado` cabe no cabeçalho de `docs/spec.md`
+- Todo estado mutável compartilhado = barril de pólvora — preferir append-only e snapshots imutáveis
+- `mkdir` é atômico mas a contagem `ls | wc -l + 1` é vulnerável a races — documentar retry se falhar
+- Questionador é essencial para detectar regressões na arquitetura (ex: goal.yaml reintroduziu o mesmo problema que estávamos resolvendo)
+
+## Simplificação do Estado
+- Controle fino de iterações (estimado, max, ciclo-N) era over-engineering — ninguém calibrava nem consultava
+- O meio-termo entre "estrutura rígida" e "bagunça" é: critérios binários (qualidade) sem contagem numérica (quantidade)
+- `memoria/` transitório + `lessons.md` versionado resolve o conflito entre estado descartável e conhecimento duradouro
+- Loop guard (detecção de repetição) substitui hard limit numérico com mais precisão
+- Questionador às vezes é conservador demais — importante ouvir mas também calibrar com o Explicador

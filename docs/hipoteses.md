@@ -1,14 +1,18 @@
-# Hipóteses — Ciclo 3
+# Hipóteses — Simplificação do Estado
 
-### Hipótese 1: Um agente pode fazer os dois papéis (definir + validar)
-- Risco de viés de confirmação (mesmo agente não falha a própria spec)
-- Mitigação: specs com critérios binários + evidências obrigatórias
-- O validador (separado) executa os testes contra a spec
+## Tensão identificada
 
-### Hipótese 2: Spec em markdown puro é suficiente
-- Formato checklist tool-agnostic, sem schema proprietário
-- Qualquer LLM lê e verifica
+- **Questionador**: remover controle = repetir erros passados (loops, perda de contexto)
+- **Explicador**: over-engineering real, indústria converge para estado flat
 
-### Hipótese 3: Especulador deve ser invocado automaticamente
-- Passo 0 (preflight) + Passo 7 (audit) dentro do ciclo loopback
-- Sem intervenção humana
+## Meio-termo
+
+| O que | Decisão | Por quê |
+|-------|---------|---------|
+| `ciclo-N/` | Remove → `memoria/` com `.md` livres | Narrativa > hierarquia numérica |
+| `estimado` / `max` | Remove | Nunca foi calibrado; agente+usuário decidem quando parar |
+| `avaliacao.md` | Remove | Nunca foi lido |
+| Critérios binários | **Mantém** | Essencial para quality gate no passo 4-5 |
+| `lessons.md` | **Mantém versionado** | Conhecimento duradouro — não pode ser transitório |
+| `memoria/` | `.gitignore` | Transitório por natureza |
+| Loop guard | Adiciona substituto leve | 3 ciclos com o mesmo spec → alerta |
